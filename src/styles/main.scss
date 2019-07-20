@@ -1,27 +1,53 @@
+$SILVER: #c1c1c1;
+$BLACK_CORAL: #526470;
+$FUZZY_WUZZY: #D16666;
+$ANDROID_GREEN: #B6C649;
+$WHITE: #FFFFFF;
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+
+body {
+    
+    background-color: $SILVER;
+    color: #181818;
+    font-family: 'Permanent Marker', cursive;
+    input,select,button {
+        font-family: 'Permanent Marker', cursive;
+    }
+}
+
 header {
     padding: 20px;
     text-align: center;
-    background-color: rgb(175, 175, 175);
+    color: $ANDROID_GREEN;
+    font-size: 25px;
+    font-weight: 600;
+    background-color: $BLACK_CORAL;
 }
 
 .main_section {
     display: flex;
+    flex-direction: column;
     padding: 20px;
 }
 
 .list {
-    padding: 10px;
     display: flex;
 }
 
 .projects {
     flex-grow: 1;
-    background-color: rgb(102, 87, 104)
+    background-color: $BLACK_CORAL;
+    .project_sticker{
+        nav {
+            margin-top: 20px;
+        }
+    
+}
 }
 
 .to_do {
     flex-grow: 5;
-    background-color: rgb(127, 170, 170);
+    background-color: white;
 }
 
 .project_list_inner,
@@ -31,13 +57,102 @@ header {
 }
 
 .items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     li {
-        margin: 5px 0;
-        background-color: rgba(255, 255, 255, 0.774);
-        cursor: pointer;
-        &:hover {
-            background-color: rgba(0, 0, 0, 0.466);
+        margin: 10px;
+        padding: 10px;
+        width: 13%;
+        display: flex;
+        flex-direction: column;
+        background-color: $ANDROID_GREEN;
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+        box-shadow: 0 0 0 1px #181818;
+        
+        &:hover{
             color: white;
         }
+        p {
+            flex-grow: 1;
+            margin: 10px 0;
+            word-wrap: break-word;
+        }
+        h6 {
+            margin: auto;
+        }
+        nav {
+            margin-top: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        input, select {
+            margin: 5px 0;
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #222222;
+            background: inherit;
+        }
+        .submit_button {
+            border: 1px solid #222222;
+            border-radius: 3PX;
+            -webkit-border-radius: 3PX;
+            -moz-border-radius: 3PX;
+            -ms-border-radius: 3PX;
+            -o-border-radius: 3PX;
+            background: $SILVER;
+            &:hover {
+                background: $WHITE;
+            }
+        }
+        button {
+            background: none;
+            border: none;
+        }
     }
+    .new_button {
+        background-color: inherit;
+    }
+    .selected_project {
+        box-shadow: 0 0 0 3px $FUZZY_WUZZY;
+    }
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    word-wrap: break-word;
+    &:hover {
+        color: $BLACK_CORAL;
+
+        cursor: pointer;
+    }
+}
+
+li[data-priority='High priority'] {
+    background: $FUZZY_WUZZY;
+}
+
+li[data-priority='Normal priority'] {
+    background: $ANDROID_GREEN;
+}
+
+li[data-priority='Low priority'] {
+    background: $SILVER;
+}
+
+.complete_list {
+    background-color: $SILVER;
+    text-decoration: line-through;
+}
+i:hover {
+    color: white;
+
+    cursor: pointer;
 }
